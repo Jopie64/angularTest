@@ -25,6 +25,14 @@ export class JoTestAppComponent {
     this.isKeepAdding = false;
   }
 
+  public clearThings() {
+    this.thingList.splice(0);
+  }
+
+  public removeThing(ix: number) {
+    this.thingList.splice(ix, 1);
+  }
+
   private keepAdding() {
     if (!this.isKeepAdding) {
       return;
