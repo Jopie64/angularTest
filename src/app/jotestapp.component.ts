@@ -1,8 +1,11 @@
+import { ServiceUserComponent } from './service-user.component';
+import { TestService } from './test.service';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'jotestapp',
-  templateUrl: 'jotestapp.component.html'
+  templateUrl: 'jotestapp.component.html',
+  providers: [TestService]
 })
 export class JoTestAppComponent {
   public thingList: string[] = ['thing 1', 'thing 2'];
@@ -11,6 +14,10 @@ export class JoTestAppComponent {
 
   private idThing: number = 0;
   private isKeepAdding: boolean = false;
+
+  constructor(private _testService: TestService) {
+    this.thing = _testService.getSomething();
+  }
 
   public addThing(thing: string) {
     this.thingList.push(thing);

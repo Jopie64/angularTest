@@ -12,6 +12,12 @@ Gimme input: <input [value]='thing' (input)='thing = $event.target.value' (keyup
 <h2>{{thingList.length}} elements in the list:</h2>
 <ul>
   <li *ngFor="let thing of thingList; let ix = index">
-    {{ix}}. {{thing}} <a (click)='removeThing(ix)'>----&gt;X&lt;----</a>
+    {{ix}}. {{thing}} <button (click)='removeThing(ix)'>----&gt;X&lt;----</button>
   </li>
 </ul>
+
+<hr>
+<service-user></service-user>
+<hr>
+<service-user></service-user>
+<hr>

@@ -1,3 +1,5 @@
+import { ServiceUserComponent } from './service-user.component';
+import { TestService } from './test.service';
 import { JoTestAppComponent } from './jotestapp.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -36,7 +38,8 @@ import '../styles/headings.css';
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
+  TestService
 ];
 
 type StoreType = {
@@ -52,6 +55,7 @@ type StoreType = {
   bootstrap: [ JoTestAppComponent ],
   declarations: [
     JoTestAppComponent,
+    ServiceUserComponent
 //    AboutComponent,
 //    HomeComponent,
 //    NoContentComponent,
